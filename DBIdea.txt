@@ -1,0 +1,24 @@
+Users
+	-> id
+	-> name
+	-> email
+	-> phone
+	-> status (active, inactive, blocked)
+
+Accounts (bankovni nalazi/racuni)
+	-> id
+	-> amount
+	-> status (active, inactive, blocked)
+	-> owner (user -> id)
+
+AccountShareholders
+	-> account_id (Accounts -> id)
+	-> user (User -> id)
+
+Transactions
+	-> id
+	-> status (paid, unpaid, refunded)
+	-> from_account (Accounts -> id)
+	-> to_account (Accounts -> id)
+
+
