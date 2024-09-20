@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    const TABLE = "transactions";
+    const string TABLE = "transactions";
 
     protected $fillable = ['status', 'from_account', 'to_account'];
 }

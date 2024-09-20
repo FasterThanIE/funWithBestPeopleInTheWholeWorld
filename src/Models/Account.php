@@ -4,5 +4,5 @@ namespace App\Emrah\Models;
 
 class Account
 {
-    const TABLE = "accounts";
+    const string TABLE = "accounts";
 }
