@@ -13,4 +13,6 @@ $route = $gubkaRoutes[$userRoute]; // $gubkaRoutes['/home'] => [ 'controller'   
 
 $controller = new $route['controller']; // HomeController -> new HomeController;
 
-$controller->{$route['function']}(); // pozovi index funkciju
+$response = $controller->{$route['function']}(); // pozovi index funkciju
+
+require_once "view/template.php";

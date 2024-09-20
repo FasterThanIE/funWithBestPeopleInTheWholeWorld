@@ -1,6 +1,7 @@
 <?php
 
-use src\Controllers\HomeController;
+
+use App\Emrah\Controllers\HomeController;
 
 $gubkaRoutes = [
 

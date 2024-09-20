@@ -6,6 +6,8 @@ class HomeController
 {
     public function index()
     {
-        die("X");
+        return [
+            'view' => 'homepage'
+        ];
     }
 }
