@@ -14,6 +14,11 @@ $gubkaRoutes = [
     '/login' => [
         'controller'    => AuthController::class,
         'function'      => 'showLogin',
+    ],
+
+    '/register' => [
+        'controller'    => AuthController::class,
+        'function'      => 'showRegistration',
     ]
 ];
 

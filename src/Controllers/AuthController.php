@@ -10,4 +10,11 @@ class AuthController
             'view'  =>  'login'
         ];
     }
+
+    public function showRegistration(): array
+    {
+        return [
+            'view'  =>  'register'
+        ];
+    }
 }
