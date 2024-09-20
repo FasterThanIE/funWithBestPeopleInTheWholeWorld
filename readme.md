@@ -7,3 +7,7 @@
 
 
 Gubka is cool.
+
+
+- Routing
+- Zavrsiti sve tabele (napraviti migracije)

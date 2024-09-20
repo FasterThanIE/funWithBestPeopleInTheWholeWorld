@@ -2,7 +2,7 @@
     "name": "pc/test-stream",
     "autoload": {
         "psr-4": {
-            "App\\Emrah\\": "src/"
+            "App\\Emrah\\": "app/"
         }
     },
     "authors": [
