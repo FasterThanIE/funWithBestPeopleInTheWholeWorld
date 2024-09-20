@@ -2,7 +2,7 @@
 
     <head>
         <title>Toma Mona (Sladjan Filipovic)</title>
-        <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+        <link rel="stylesheet" type="text/css" href="public/css/style.css">
     </head>
 
     <body>
