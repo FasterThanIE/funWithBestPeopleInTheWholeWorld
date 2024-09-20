@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Emrah\Controllers\AuthController;
 use App\Emrah\Controllers\HomeController;
 
 $gubkaRoutes = [
@@ -10,6 +11,11 @@ $gubkaRoutes = [
         'controller'    => HomeController::class,
         'function'      => 'index'
     ],
+
+    '/login' => [
+        'controller'    => AuthController::class,
+        'function'      => 'showLogin',
+    ]
 ];
 
 // ako se dodje na home,  $controller = new HomeController(); $controller->index();
