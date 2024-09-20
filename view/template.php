@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <?php require_once "pages/login.php"; ?>
+        <?php require_once "pages/register.php"; ?>
     </body>
 
 </html>
