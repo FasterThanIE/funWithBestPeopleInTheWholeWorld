@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Controllers;
+namespace App\Emrah\Controllers;
 
 class HomeController
 {
