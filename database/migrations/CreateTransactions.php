@@ -2,10 +2,9 @@
 
 use App\Emrah\Models\Account;
 use App\Emrah\Models\Transaction;
-use App\Emrah\Models\User;
 use Illuminate\Database\Schema\Blueprint;
 
-$schema->create(table: Transaction::TABLE, callback: function(Blueprint $table) {
+$schema->create(table: Transaction::TABLE, callback: function (Blueprint $table) {
 
     $table->id();
     $table->string(column: 'status');
