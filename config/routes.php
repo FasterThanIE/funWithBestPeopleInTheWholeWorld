@@ -6,8 +6,7 @@ use App\Emrah\Controllers\HomeController;
 
 $gubkaRoutes = [
 
-    // localhost/home => HomeController::index()
-    '/home' => [ // localhost/home
+    '/home' => [
         'controller'    => HomeController::class,
         'function'      => 'index'
     ],
@@ -18,4 +17,3 @@ $gubkaRoutes = [
     ]
 ];
 
-// ako se dodje na home,  $controller = new HomeController(); $controller->index();
