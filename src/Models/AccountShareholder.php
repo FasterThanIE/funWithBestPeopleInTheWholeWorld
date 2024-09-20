@@ -8,5 +8,5 @@ class AccountShareholder extends Model
 {
     const TABLE = "accounts_shareholder";
 
-    protected $fillable = ['id', 'name', 'email', 'phone', 'status'];
+    protected $fillable = ['account_id', 'user_id'];
 }
