@@ -3,7 +3,7 @@
 require_once "app/bootstrap.php";
 require_once "config/routes.php";
 
-$userRoute = "/home"; // $_SERVER["remote_addr"]
+$userRoute = str_replace(search: '/testStream', replace: '', subject: $_SERVER['REQUEST_URI']);
 
 if(!array_key_exists(key: $userRoute, array: $gubkaRoutes)) {
     die("This route doesnt exist"); // TODO: redirect to 404
