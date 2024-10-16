@@ -2,11 +2,19 @@
 
 namespace App\Emrah\Validators;
 
+/**
+ * When refactoring base validator
+ * Add ability to validate based on SQL Field:
+ *  -> ['name' => ['validateAs' => 'users.name']] (Get structure of name field from SQL table users)
+ *      => Eg: users.email in the DB is VARCHAR(64), NULLABLE => Validate as string max length 64, nullable
+ */
+
 class BaseValidator
 {
 
     const RULE_INT       = "int";
     const RULE_STRING    = "string";
+    const RULE_EMAIL     = "email";
     const RULE_REQUIRED  = "required";
     const RULE_LENGTH    = "length";
 
@@ -15,12 +23,15 @@ class BaseValidator
      * @param array $data
      * @return bool
      */
-    public function validate(array $rules, array $data): bool
+    protected function validate(array $rules, array $data): bool
     {
         foreach ($rules as $field => $validationRules)
         {
             foreach ($validationRules as $rule => $value)
             {
+                if(!isset($data[$field])) {
+                    return false;
+                }
                 $dataValue = $data[$field];
 
                 // TODO: Refactor, dummy code, proving point
@@ -31,6 +42,9 @@ class BaseValidator
                             return false;
                         }
                         if($value === self::RULE_INT && !is_int($dataValue)) {
+                            return false;
+                        }
+                        if($value === self::RULE_EMAIL && !filter_var($dataValue, FILTER_VALIDATE_EMAIL)) {
                             return false;
                         }
                         break;
