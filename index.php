@@ -14,12 +14,12 @@ require_once "config/routes.php";
 $userRoute = str_replace(search: '/testStream', replace: '', subject: $_SERVER['REQUEST_URI']);
 
 if (!array_key_exists(key: $userRoute, array: $gubkaRoutes)) {
-    die("This route doesnt exist"); // TODO: redirect to 404
+    header("Location: view/pages/404.html");
 }
 
-$route = $gubkaRoutes[$userRoute]; // $gubkaRoutes['/home'] => [ 'controller'    => \App\Emrah\Controllers\HomeController::class, 'function'      => 'index' ],
+$route = $gubkaRoutes[$userRoute];
 
-$controller = new $route['controller']; // HomeController -> new HomeController;
+$controller = new $route['controller'];
 
 
 // TODO: Refactor to use OOP, maybe builder or factory or wtf something?
