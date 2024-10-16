@@ -18,7 +18,7 @@ $controller = new $route['controller']; // HomeController -> new HomeController;
 // Problem: Some routes require paramters passed to functions, some dont
 // Some require redirects, some dont
 // Sug: Builder approach
-if(isset($route['functiona']) && $route['functional']) {
+if(isset($route['functional']) && $route['functional']) {
     $controller->{$route['function']}($_REQUEST);
 } else {
     $response = $controller->{$route['function']}();
