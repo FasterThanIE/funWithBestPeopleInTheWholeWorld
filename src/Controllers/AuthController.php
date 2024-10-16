@@ -3,11 +3,17 @@
 namespace App\Emrah\Controllers;
 
 use App\Emrah\Models\User;
+use App\Emrah\Services\AuthService;
 use App\Emrah\Validators\Authentication\RegistrationValidator;
-use Illuminate\Support\Facades\Redirect;
 
 class AuthController
 {
+    private readonly AuthService $authService;
+
+    public function __construct(){
+        $this->authService = new AuthService();
+    }
+
     public function showLogin(): array
     {
         return [
@@ -22,22 +28,19 @@ class AuthController
         ];
     }
 
-    public function register(array $request)
+    public function register(array $request, RegistrationValidator $registrationValidator)
     {
-        $validator = new RegistrationValidator();
-        $validation = $validator->validateData($request);
+        $validation = $registrationValidator->validateData($request);
 
         if(!$validation) {
             die("FAILED VALIDATION, THIS IS A COOL WAY TO VALIDATE STUFF Q.Q");
         }
 
-        User::create([
-            'email' => $request['email'],
-            'password' => $request['password'],
-            'phone' => '12',
-            'status' => 1
-        ]);
+        if($this->authService->emailExists($request['email'])) {
+            die("User already exists");
+        }
+        $this->authService->create($request['email'], $request['password']);
 
-        header("Location: https://google.com");
+        header("Location: /");
     }
 }
