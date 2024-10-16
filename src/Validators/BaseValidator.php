@@ -32,7 +32,7 @@ class BaseValidator
                 if(!isset($data[$field])) {
                     return false;
                 }
-                $dataValue = $data[$field];
+                $dataValue = trim($data[$field]);
 
                 // TODO: Refactor, dummy code, proving point
 
