@@ -19,6 +19,12 @@ $gubkaRoutes = [
     '/register' => [
         'controller'    => AuthController::class,
         'function'      => 'showRegistration',
+    ],
+
+    '/auth/register' => [
+        'controller'    => AuthController::class,
+        'function'      => 'register',
+        'functional'    => true,
     ]
 ];
 
